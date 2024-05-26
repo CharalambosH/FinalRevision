@@ -11,7 +11,7 @@ using namespace std;
 
 //prototypes
 double sumOfRange(const double arr[],const int startIndex,const int endIndex,const int maxSize);
-double productOfRange(double arr[], int startIndex, int endIndex, int maxSize);
+double productOfRange(const double arr[],const int startIndex,const int endIndex,const int maxSize);
 bool allPositive(double arr[], int maxSize);
 
 int main() {
@@ -72,6 +72,7 @@ int main() {
  @return return the sum of a specified range
  */
 double sumOfRange(const double arr[],const int startIdx,const int endIdx,const int maxSize) {
+    assert (startIdx < endIdx && endIdx < maxSize);
     double sum = 0;
     
     for (int i = startIdx; i <= endIdx; ++i)
@@ -80,5 +81,21 @@ double sumOfRange(const double arr[],const int startIdx,const int endIdx,const i
     return sum;
 }
 
+/**
+ retrun the product of a specified range
+ @param arr array with the values
+ @param startIdx start of the range
+ @param endIdx end of the rage
+ @param maxSize the maximum size of the array
+ @return return the product of a specified range
+ */
+double productOfRange(const double arr[],const int startIdx,const int endIdx,const int maxSize) {
+    double prod = 1;
+    
+    for (int i = 0; i < endIdx; ++i)
+        prod*=arr[i];
+    
+    return prod;
+}
 
 
